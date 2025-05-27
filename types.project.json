@@ -1,0 +1,13 @@
+{
+  "name": "use-dynamic-size",
+  "tree": {
+    "$className": "DataModel",
+    "use-dynamic-size": {
+      "$path": "Packages",
+      "$ignoreUnknownInstances": true,
+      "use-dynamic-size": {
+        "$path": "src"
+      }
+    }
+  }
+}
