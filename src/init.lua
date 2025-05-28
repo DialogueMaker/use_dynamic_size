@@ -1,6 +1,6 @@
 --!strict
 
-local React = require(script.Parent.react);
+local React = require("@pkg/react");
 
 export type DynamicSizeProperties = {
   minimumHeight: number?;
