@@ -1,6 +1,6 @@
 --!strict
 
-local React = require("@pkg/react");
+local React = require(script.Parent.roblox_packages.react);
 
 export type DynamicSizeProperties = {
   minimumHeight: number?;
