@@ -2,9 +2,11 @@
 
 local React = require(script.Parent.roblox_packages.react);
 
-local function useDynamicSize(gui: GuiBase2d, minimumWidth: number?, minimumHeight: number?): boolean
+local function useDynamicSize(gui: GuiBase2d?, minimumWidth: number?, minimumHeight: number?): boolean
 
   local checkCondition = React.useCallback(function()
+
+    assert(gui, "GuiBase2d instance required.");
 
     local isAtOrAboveMinimumHeight = minimumHeight == nil or gui.AbsoluteSize.Y >= minimumHeight;
     local isAtOrAboveMinimumWidth = minimumWidth == nil or gui.AbsoluteSize.X >= minimumWidth;
@@ -16,6 +18,12 @@ local function useDynamicSize(gui: GuiBase2d, minimumWidth: number?, minimumHeig
   local isConditionMet, setIsConditionMet = React.useState(checkCondition());
 
   React.useEffect(function()
+
+    if not gui then
+
+      return;
+
+    end;
 
     local function updateStatus()
 
