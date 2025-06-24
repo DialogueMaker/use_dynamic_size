@@ -15,7 +15,7 @@ local function useDynamicSize(gui: GuiBase2d?, minimumWidth: number?, minimumHei
 
   end, {gui :: unknown, minimumHeight, minimumWidth});
 
-  local isConditionMet, setIsConditionMet = React.useState(checkCondition());
+  local isConditionMet, setIsConditionMet = React.useState(if gui then checkCondition() else false);
 
   React.useEffect(function()
 
